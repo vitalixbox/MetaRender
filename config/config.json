@@ -1,0 +1,16 @@
+{
+  "window": {
+    "width": 1920,
+    "height": 1080,
+    "title": "MetaRender Graphics Engine",
+    "vsync": true,
+    "fullscreen": false
+  },
+  "renderer": {
+    "type": "gl21"
+  },
+  "debug": {
+    "showFPS": true,
+    "logLevel": "info"
+  }
+}

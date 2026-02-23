@@ -1,0 +1,60 @@
+# General
+*.log
+*.tmp
+*.bak
+*.orig
+*.swp
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Environment and local configs
+.env
+.env.local
+.env.*.local
+*.env
+.local
+
+# Dependency/cache/build output
+node_modules/
+vendor/
+jspm_packages/
+dist/
+build/
+out/
+bin/
+target/
+coverage/
+*.gcno
+*.gcda
+
+# C/C++
+*.o
+*.obj
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# IDEs and editors
+.vscode/
+.vs
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.sln
+*.nib
+
+# OS-specific
+# (kept minimal to avoid removing genuine files on CI)
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini

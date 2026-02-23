@@ -23,7 +23,7 @@ The project is currently tested only with Visual Studio.
 ## Next Steps
 
 - Finish NeHe lessons
-- Read Game Engine Architecture by Jason Gregory and implement a game engine architecture on top of the existing graphics lab
+- Read Game Engine Architecture by Jason Gregory and implement its architectural concepts in MetaRender
 - Implement a Vulkan rendering pipeline
 - Explore other graphics technologies and techniques, e.g. ray tracing, shaders, etc.
 - Make some projects with the engine, e.g. game prototypes, graphics demos, demos for demoscene, etc.

@@ -30,6 +30,8 @@ void GLRenderer::initialize(Window& window) {
 	glDisable(GL_LIGHT1);
 	glDisable(GL_LIGHTING);
 	glDisable(GL_BLEND);
+
+	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 }
 
 void GLRenderer::resize() {

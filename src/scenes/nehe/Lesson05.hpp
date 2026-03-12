@@ -4,14 +4,20 @@
 
 namespace metarender::scenes::nehe {
 
-// Tor and Cube
 class Lesson05 : public IScene {
 public:
+	static constexpr metarender::SceneMetadata metadata() noexcept {
+		return {
+			.name = "Lesson05",
+			.description = "3D Shapes",
+			.flags = SceneFlag_ShowInMenu
+		};
+	}
+
 	void onEnter() override;
 	void onUpdate(float deltaTime) override;
 	void onRender() override;
 	void onRenderUI() override;
-	[[nodiscard]] std::string getName() const override { return "Lesson05"; }
 
 private:
 	float m_triangleRotation = 0.0f;

@@ -7,14 +7,20 @@
 
 namespace metarender::scenes::nehe {
 
-// Textured filtering
 class Lesson07 : public IScene {
 public:
+	static constexpr metarender::SceneMetadata metadata() noexcept {
+		return {
+			.name = "Lesson07",
+			.description = "Texture Filters, Lighting & Keyboard Control",
+			.flags = SceneFlag_ShowInMenu
+		};
+	}
+
 	void onEnter() override;
 	void onUpdate(float deltaTime) override;
 	void onRender() override;
 	void onRenderUI() override;
-	[[nodiscard]] std::string getName() const override { return "Lesson06"; }
 
 private:
 	std::array<GLuint, 3> m_textures{ 0, 0, 0 };

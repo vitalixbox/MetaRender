@@ -6,13 +6,19 @@
 
 namespace metarender::scenes::nehe {
 
-// Coloring
 class Lesson03 : public IScene {
 public:
+	static constexpr metarender::SceneMetadata metadata() noexcept {
+		return {
+			.name = "Lesson03",
+			.description = "Adding Color",
+			.flags = SceneFlag_ShowInMenu
+		};
+	}
+
 	void onRender() override;
 	void onEnter() override;
 	void onRenderUI() override;
-	[[nodiscard]] std::string getName() const override { return "Lesson03"; }
 
 private:
 	ImVec4 p1 = ImVec4(1.0f, 0.0f, 0.0f, 1.0f);

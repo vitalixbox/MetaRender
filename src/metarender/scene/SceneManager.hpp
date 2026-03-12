@@ -1,5 +1,7 @@
 #pragma once
 
+#include "IScene.hpp"
+
 #include <functional>
 #include <memory>
 #include <unordered_map>
@@ -19,11 +21,17 @@ public:
 	~SceneManager();
 
 	template<typename SceneType>
-	void registerScene(const std::string name) {
-		m_factories[name] = []() { return std::make_unique<SceneType>();  };
+	void registerScene() {
+		metarender::SceneMetadata metadata = SceneType::metadata();
+		std::string name(metadata.name);
+		m_factories[name] = []() { return std::make_unique<SceneType>(); };
 		m_sceneNames.push_back(name);
 	}
 
+	template<typename SceneType>
+	void loadScene() {
+		loadScene(std::string(SceneType::metadata().name));
+	}
 	void loadScene(std::string name);
 	void reloadCurrentScene();
 

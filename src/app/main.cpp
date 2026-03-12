@@ -22,18 +22,18 @@ int main(int arc, char* argv[]) {
 		metarender::Engine engine(engineInfo);
 
 		auto& scenes = engine.getSceneManager();
-		scenes.registerScene<metarender::scenes::Sandbox>("Sandbox");
-		scenes.registerScene<metarender::scenes::nehe::Lesson02>("Lesson02");
-		scenes.registerScene<metarender::scenes::nehe::Lesson03>("Lesson03");
-		scenes.registerScene<metarender::scenes::nehe::Lesson04>("Lesson04");
-		scenes.registerScene<metarender::scenes::nehe::Lesson05>("Lesson05");
-		scenes.registerScene<metarender::scenes::nehe::Lesson06>("Lesson06");
-		scenes.registerScene<metarender::scenes::nehe::Lesson07>("Lesson07");
-		scenes.registerScene<metarender::scenes::nehe::Lesson08>("Lesson08");
-		scenes.registerScene<metarender::scenes::nehe::Lesson09>("Lesson09");
-		scenes.registerScene<metarender::scenes::nehe::Lesson10>("Lesson10");
-		scenes.registerScene<metarender::scenes::nehe::Lesson11>("Lesson11");
-		scenes.loadScene("Lesson11");
+		scenes.registerScene<metarender::scenes::Sandbox>();
+		scenes.registerScene<metarender::scenes::nehe::Lesson02>();
+		scenes.registerScene<metarender::scenes::nehe::Lesson03>();
+		scenes.registerScene<metarender::scenes::nehe::Lesson04>();
+		scenes.registerScene<metarender::scenes::nehe::Lesson05>();
+		scenes.registerScene<metarender::scenes::nehe::Lesson06>();
+		scenes.registerScene<metarender::scenes::nehe::Lesson07>();
+		scenes.registerScene<metarender::scenes::nehe::Lesson08>();
+		scenes.registerScene<metarender::scenes::nehe::Lesson09>();
+		scenes.registerScene<metarender::scenes::nehe::Lesson10>();
+		scenes.registerScene<metarender::scenes::nehe::Lesson11>();
+		scenes.loadScene<metarender::scenes::nehe::Lesson11>();
 
 		engine.run();
 

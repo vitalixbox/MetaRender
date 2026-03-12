@@ -6,14 +6,20 @@
 
 namespace metarender::scenes::nehe {
 
-// Textured cube
 class Lesson06 : public IScene {
 public:
+	static constexpr metarender::SceneMetadata metadata() noexcept {
+		return {
+			.name = "Lesson06",
+			.description = "Texture Mapping",
+			.flags = SceneFlag_ShowInMenu
+		};
+	}
+
 	void onEnter() override;
 	void onUpdate(float deltaTime) override;
 	void onRender() override;
 	void onRenderUI() override;
-	[[nodiscard]] std::string getName() const override { return "Lesson06"; }
 
 private:
 	GLuint m_texture = 0;

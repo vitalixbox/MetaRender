@@ -21,15 +21,21 @@ typedef struct tagSECTOR {	// Build Our Sector Structure
 	TRIANGLE* triangle;		// Pointer To Array Of Triangles
 } SECTOR;
 
-// 3D World
 class Lesson10 : public IScene {
 public:
+	static constexpr metarender::SceneMetadata metadata() noexcept {
+		return {
+			.name = "Lesson10",
+			.description = "Loading And Moving Through A 3D World",
+			.flags = SceneFlag_ShowInMenu
+		};
+	}
+
 	void onEnter() override;
 	void onUpdate(float deltaTime) override;
 	void onRender() override;
 	void onRenderUI() override;
 	void setupWorld();
-	[[nodiscard]] std::string getName() const override { return "Lesson10"; }
 	void readstr(FILE* f, char* string) {
 		do {
 			fgets(string, 255, f);

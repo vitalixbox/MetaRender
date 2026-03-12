@@ -25,7 +25,7 @@ void SceneManager::loadScene(std::string name) {
 	}
 
 	if (m_currentScene) {
-		LOG_INFO("Exiting scene: {}", m_currentScene->getName());
+		LOG_INFO("Exiting scene: {}", m_currentSceneName);
 		m_currentScene->onExit();
 	}
 

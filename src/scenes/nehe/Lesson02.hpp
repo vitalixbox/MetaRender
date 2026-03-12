@@ -4,13 +4,19 @@
 
 namespace metarender::scenes::nehe {
 
-// Simple triangles
 class Lesson02 : public IScene {
 public:
+	static constexpr metarender::SceneMetadata metadata() noexcept {
+		return {
+			.name = "Lesson02",
+			.description = "Your First Polygon",
+			.flags = SceneFlag_ShowInMenu
+		};
+	}
+
 	void onRender() override;
 	void onEnter() override;
 	void onRenderUI() override;
-	[[nodiscard]] std::string getName() const override { return "Lesson02"; }
 
 private:
 	float m_triX = 0.0f;

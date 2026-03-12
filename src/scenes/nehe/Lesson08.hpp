@@ -7,14 +7,20 @@
 
 namespace metarender::scenes::nehe {
 
-// Alpha Blending and Texture Filtering
 class Lesson08 : public IScene {
 public:
+	static constexpr metarender::SceneMetadata metadata() noexcept {
+		return {
+			.name = "Lesson08",
+			.description = "Blending",
+			.flags = SceneFlag_ShowInMenu
+		};
+	}
+
 	void onEnter() override;
 	void onUpdate(float deltaTime) override;
 	void onRender() override;
 	void onRenderUI() override;
-	[[nodiscard]] std::string getName() const override { return "Lesson06"; }
 
 private:
 	std::array<GLuint, 3> m_textures{ 0, 0, 0 };

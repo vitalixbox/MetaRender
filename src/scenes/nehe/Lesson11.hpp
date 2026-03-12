@@ -10,11 +10,18 @@ namespace metarender::scenes::nehe {
 // Flag
 class Lesson11 : public IScene {
 public:
+	static constexpr metarender::SceneMetadata metadata() noexcept {
+		return {
+			.name = "Lesson11",
+			.description = "Flag Effect (Waving Texture)",
+			.flags = SceneFlag_ShowInMenu
+		};
+	}
+
 	void onEnter() override;
 	void onUpdate(float deltaTime) override;
 	void onRender() override;
 	void onRenderUI() override;
-	[[nodiscard]] std::string getName() const override { return "Lesson11"; }
 
 private:
 	GLuint m_texture = 0;

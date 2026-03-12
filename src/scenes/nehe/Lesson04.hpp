@@ -4,14 +4,20 @@
 
 namespace metarender::scenes::nehe {
 
-// Rotation
 class Lesson04 : public IScene {
 public:
+	static constexpr metarender::SceneMetadata metadata() noexcept {
+		return {
+			.name = "Lesson04",
+			.description = "Rotation",
+			.flags = SceneFlag_ShowInMenu
+		};
+	}
+
 	void onEnter() override;
 	void onUpdate(float deltaTime) override;
 	void onRender() override;
 	void onRenderUI() override;
-	[[nodiscard]] std::string getName() const override { return "Lesson04"; }
 
 private:
 	float m_triangleRotation = 0.0f;

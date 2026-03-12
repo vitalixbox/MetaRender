@@ -15,14 +15,20 @@ typedef struct {	// Create A Structure For Star
 
 const int NUM_STARS = 50;
 
-// Twinkle stars
 class Lesson09 : public IScene {
 public:
+	static constexpr metarender::SceneMetadata metadata() noexcept {
+		return {
+			.name = "Lesson09",
+			.description = "Moving Bitmaps In 3D Space",
+			.flags = SceneFlag_ShowInMenu
+		};
+	}
+
 	void onEnter() override;
 	void onUpdate(float deltaTime) override;
 	void onRender() override;
 	void onRenderUI() override;
-	[[nodiscard]] std::string getName() const override { return "Lesson06"; }
 
 private:
 	stars m_stars[NUM_STARS];

@@ -7,9 +7,16 @@ namespace metarender::scenes {
 
 class Sandbox : public IScene {
 public:
+	static constexpr metarender::SceneMetadata metadata() noexcept {
+		return {
+			.name = "Sandbox",
+			.description = "Empty scene for experimenting",
+			.flags = SceneFlag_ShowInMenu
+		};
+	}
+
 	void onEnter() override;
 	void onRender() override;
-	[[nodiscard]] std::string getName() const override { return "Sandbox"; }
 };
 
 }

@@ -29,6 +29,7 @@ void GLRenderer::initialize(Window& window) {
 	glDisable(GL_TEXTURE_2D);
 	glDisable(GL_LIGHT1);
 	glDisable(GL_LIGHTING);
+	glEnable(GL_COLOR_MATERIAL);
 	glDisable(GL_BLEND);
 
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);

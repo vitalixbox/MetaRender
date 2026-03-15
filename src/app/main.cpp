@@ -12,6 +12,7 @@
 #include <scenes/nehe/Lesson09.hpp>
 #include <scenes/nehe/Lesson10.hpp>
 #include <scenes/nehe/Lesson11.hpp>
+#include <scenes/nehe/Lesson12.hpp>
 
 int main(int arc, char* argv[]) {
 	try {
@@ -33,7 +34,8 @@ int main(int arc, char* argv[]) {
 		scenes.registerScene<metarender::scenes::nehe::Lesson09>();
 		scenes.registerScene<metarender::scenes::nehe::Lesson10>();
 		scenes.registerScene<metarender::scenes::nehe::Lesson11>();
-		scenes.loadScene<metarender::scenes::nehe::Lesson11>();
+		scenes.registerScene<metarender::scenes::nehe::Lesson12>();
+		scenes.loadScene<metarender::scenes::nehe::Lesson12>();
 
 		engine.run();
 

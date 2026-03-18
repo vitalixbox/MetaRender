@@ -58,3 +58,6 @@ Makefile
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+# Project specific
+imgui.ini

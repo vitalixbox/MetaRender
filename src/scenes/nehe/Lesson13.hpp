@@ -34,6 +34,8 @@ private:
 	float zRot = 0.0f;
 
 	void BuildFont();
+	void KillFont();
+	void glPrint(const char *fmt, ...);
 };
 
 }

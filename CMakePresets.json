@@ -37,5 +37,25 @@
         "CMAKE_TOOLCHAIN_FILE": "C:/vcpkg/scripts/buildsystems/vcpkg.cmake"
       }
     }
+  ],
+  "buildPresets": [
+    {
+      "name": "x64-debug",
+      "configurePreset": "x64-debug"
+    },
+    {
+      "name": "x64-release",
+      "configurePreset": "x64-release"
+    },
+    {
+      "name": "x64-debug-msvc",
+      "configurePreset": "x64-debug-msvc",
+      "configuration": "Debug"
+    },
+    {
+      "name": "x64-release-msvc",
+      "configurePreset": "x64-release-msvc",
+      "configuration": "Release"
+    }
   ]
 }

@@ -1,8 +1,14 @@
 set shell := ["powershell.exe", "-c"]
 
 configure:
-    cmake -G "Visual Studio 18 2026" -A x64 -B out/build/x64-msvc-release -DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems/vcpkg.cmakeн
+    cmake --preset x64-release-msvc
+
+configure2:
+    cmake --preset x64-release
+
+clean:
+    Remove-Item -Path out/ -Recurse -Force
 
 run:
-    cmake --build out/build/x64-msvc-release --config Release
-    .\out\build\x64-msvc-release\Release\MetaRender.exe
+    cmake --build --preset x64-release-msvc
+    .\out\build\x64-release-msvc\Release\MetaRender.exe

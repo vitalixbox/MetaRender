@@ -18,13 +18,6 @@
 namespace metarender::scenes::nehe {
 
 void Lesson13::onEnter() {
-	m_texture = m_assetManager->loadTexture("assets/nehe/Cube.bmp");
-
-	glBindTexture(GL_TEXTURE_2D, m_texture);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glEnable(GL_TEXTURE_2D);
-
 	BuildFont();
 }
 
@@ -48,7 +41,7 @@ void Lesson13::BuildFont() {
 
     base = glGenLists(96);  // Storage For 96 Characters ( NEW )
     font = CreateFont(
-        -24,                            // Height Of Font ( NEW )
+        -48,                            // Height Of Font ( NEW )
         0,                              // Width Of Font
         0,                              // Angle Of Escapement
         0,                              // Orientation Angle
@@ -100,8 +93,6 @@ void Lesson13::onRender() {
     m_renderer->perspective(45.0f, m_engine->getWindow().getAspectRatio(), 0.1f, 100.0f);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-
-	glBindTexture(GL_TEXTURE_2D, m_texture);
 
 	glTranslatef(0.0f,0.0f,-1.0f);              // Move One Unit Into The Screen
 

@@ -2,17 +2,17 @@
 
 #include <metarender/scene/IScene.hpp>
 
-#include <array>
+#include <windows.h>
 #include <glad/glad.h>
 
 namespace metarender::scenes::nehe {
 
-class Lesson13 : public IScene {
+class Lesson14 : public IScene {
 public:
 	static constexpr metarender::SceneMetadata metadata() noexcept {
 		return {
-			.name = "Lesson13",
-			.description = "Bitmap Fonts",
+			.name = "Lesson14",
+			.description = "Outline Fonts",
 			.flags = SceneFlag_ShowInMenu
 		};
 	}
@@ -24,9 +24,9 @@ public:
 
 private:
 	GLuint  base;                           // Base Display List For The Font Set
-	GLfloat cnt1;                           // 1st Counter Used To Move Text & For Coloring
-	GLfloat cnt2;                           // 2nd Counter Used To Move Text & For Coloring
+	GLYPHMETRICSFLOAT gmf[256];
 
+	float rot = 0.0f;
 	float xRot = 0.0f;
 	float yRot = 0.0f;
 	float zRot = 0.0f;

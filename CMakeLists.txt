@@ -14,7 +14,7 @@ file(GLOB_RECURSE METARENDER_HEADERS CONFIGURE_DEPENDS
 
 # Windows-only sources
 if (NOT WIN32)
-  list(REMOVE_ITEM METARENDER_SOURCES
+    list(REMOVE_ITEM METARENDER_SOURCES
     ${PROJECT_SOURCE_DIR}/src/scenes/nehe/Lesson13.cpp
     ${PROJECT_SOURCE_DIR}/src/scenes/nehe/Lesson14.cpp
     ${PROJECT_SOURCE_DIR}/src/scenes/nehe/Lesson15.cpp
@@ -45,9 +45,9 @@ add_custom_target(run
 
 add_custom_target(copy_assets
     COMMAND ${CMAKE_COMMAND} -E copy_directory
-    ${CMAKE_SOURCE_DIR}/assets ${CMAKE_CURRENT_BINARY_DIR}/assets
+    ${CMAKE_SOURCE_DIR}/assets $<TARGET_FILE_DIR:MetaRender>/assets
     COMMAND ${CMAKE_COMMAND} -E copy_directory
-    ${CMAKE_SOURCE_DIR}/config ${CMAKE_CURRENT_BINARY_DIR}/config
+    ${CMAKE_SOURCE_DIR}/config $<TARGET_FILE_DIR:MetaRender>/config
 )
 add_dependencies(MetaRender copy_assets)
 
@@ -83,5 +83,5 @@ target_link_libraries(MetaRender PRIVATE
 target_link_libraries(metarender_engine PUBLIC nlohmann_json::nlohmann_json)
 
 if (WIN32)
-  target_link_libraries(MetaRender PRIVATE opengl32)
+    target_link_libraries(MetaRender PRIVATE opengl32)
 endif()

@@ -38,7 +38,18 @@ TBD
 
 #### Windows
 
-TBD
+```sh
+winget install Kitware.CMake
+winget install Ninja-build.Ninja
+winget install Microsoft.vcpkg
+# Set VCPKG_ROOT system wide
+[System.Environment]::SetEnvironmentVariable(  
+"VCPKG_ROOT",  
+"C:\vcpkg",  
+"User"  
+)
+winget install --id Casey.Just --exact
+```
 
 ### Build and  Run
 
@@ -51,4 +62,3 @@ just run
 cmake --preset x64-release
 cmake --build --preset x64-release --target run
 ```
-

@@ -12,6 +12,15 @@ file(GLOB_RECURSE METARENDER_HEADERS CONFIGURE_DEPENDS
   ${PROJECT_SOURCE_DIR}/src/*.hpp
 )
 
+# Windows-only sources
+if (NOT WIN32)
+  list(REMOVE_ITEM METARENDER_SOURCES
+    ${PROJECT_SOURCE_DIR}/src/scenes/nehe/Lesson13.cpp
+    ${PROJECT_SOURCE_DIR}/src/scenes/nehe/Lesson14.cpp
+    ${PROJECT_SOURCE_DIR}/src/scenes/nehe/Lesson15.cpp
+  )
+endif()
+
 add_library(metarender_engine STATIC
   ${METARENDER_SOURCES}
   ${METARENDER_HEADERS}

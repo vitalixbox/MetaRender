@@ -21,7 +21,7 @@ public:
 		std::string configPath = "config/config.json";
 	};
 
-	explicit Engine(const CreateInfo& info = {});
+	explicit Engine(const CreateInfo& info);
 	~Engine();
 
 	Engine(const Engine&) = delete;

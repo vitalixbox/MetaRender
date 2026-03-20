@@ -13,9 +13,12 @@
 #include <scenes/nehe/Lesson10.hpp>
 #include <scenes/nehe/Lesson11.hpp>
 #include <scenes/nehe/Lesson12.hpp>
+
+#ifdef _WIN32
 #include <scenes/nehe/Lesson13.hpp>
 #include <scenes/nehe/Lesson14.hpp>
 #include <scenes/nehe/Lesson15.hpp>
+#endif
 
 int main(int arc, char* argv[]) {
 	try {
@@ -38,10 +41,12 @@ int main(int arc, char* argv[]) {
 		scenes.registerScene<metarender::scenes::nehe::Lesson10>();
 		scenes.registerScene<metarender::scenes::nehe::Lesson11>();
 		scenes.registerScene<metarender::scenes::nehe::Lesson12>();
+#ifdef _WIN32
 		scenes.registerScene<metarender::scenes::nehe::Lesson13>();
 		scenes.registerScene<metarender::scenes::nehe::Lesson14>();
 		scenes.registerScene<metarender::scenes::nehe::Lesson15>();
-		scenes.loadScene<metarender::scenes::nehe::Lesson15>();
+#endif
+		scenes.loadScene<metarender::scenes::Sandbox>();
 
 		engine.run();
 

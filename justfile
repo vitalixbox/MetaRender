@@ -1,14 +1,11 @@
-set shell := ["powershell.exe", "-c"]
+set windows-shell := ["powershell.exe", "-c"]
+preset := "x64-release"
+
+default:
+  @just run
 
 configure:
-    cmake --preset x64-release-msvc
-
-configure2:
-    cmake --preset x64-release
-
-clean:
-    Remove-Item -Path out/ -Recurse -Force
+  cmake --preset {{preset}}
 
 run:
-    cmake --build --preset x64-release-msvc
-    .\out\build\x64-release-msvc\Release\MetaRender.exe
+  cmake --build --preset {{preset}} --target run

@@ -36,6 +36,13 @@ add_executable(MetaRender
   src/app/main.cpp
 )
 
+add_custom_target(run
+  COMMAND $<TARGET_FILE:MetaRender>
+  DEPENDS MetaRender
+  WORKING_DIRECTORY $<TARGET_FILE_DIR:MetaRender>
+  USES_TERMINAL
+)
+
 add_custom_target(copy_assets
     COMMAND ${CMAKE_COMMAND} -E copy_directory
     ${CMAKE_SOURCE_DIR}/assets ${CMAKE_CURRENT_BINARY_DIR}/assets

@@ -13,17 +13,42 @@ The idea started in 2026 when I began re-studying the classic [NeHe OpenGL tutor
 - Configurable engine settings
 - Reusable core subsystems: logging, input abstraction
 
-## Quick Start
+## QuickStart
 
-The project is currently tested only with Visual Studio. 
-- Open `CMakeLists.txt` in Visual Studio as a CMake project  
-- Build the project  
-- Run it
+Get repository:
+1. `git@github.com:vitalixbox/MetaRender.git`
+2. `git submodule update --init --recursive` project uses some vendored sources.
 
-## Next Steps
+### Prerequisites
 
-- Finish NeHe lessons
-- Read Game Engine Architecture by Jason Gregory and implement its architectural concepts in MetaRender
-- Implement a Vulkan rendering pipeline
-- Explore other graphics technologies and techniques, e.g. ray tracing, shaders, etc.
-- Make some projects with the engine, e.g. game prototypes, graphics demos, demos for demoscene, etc.
+#### MacOS
+
+```sh
+brew install cmake
+brew install ninja
+brew install vcpkg
+git clone https://github.com/microsoft/vcpkg.git ~/vcpkg
+export VCPKG_ROOT="$HOME/vcpkg"
+brew install just
+```
+
+#### Linux
+
+TBD
+
+#### Windows
+
+TBD
+
+### Build and  Run
+
+```sh
+# Using justfile
+just configure
+just run
+
+# Useing cmake
+cmake --preset x64-release
+cmake --build --preset x64-release --target run
+```
+

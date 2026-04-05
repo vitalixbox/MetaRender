@@ -34,7 +34,12 @@ brew install just
 
 #### Linux
 
-TBD
+```sh
+sudo pacman -S cmake ninja just
+yay -S vcpkg
+git clone https://github.com/microsoft/vcpkg.git ~/vcpkg
+export VCPKG_ROOT="$HOME/vcpkg"
+```
 
 #### Windows
 
